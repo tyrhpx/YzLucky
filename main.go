@@ -18,7 +18,7 @@ import (
 
 var (
 	listenPort       = flag.Int("p", 16601, "http Admin Web listen port ")
-	configureFileURL = flag.String("c", "", "configure file url")
+	configureFileURL = flag.String("c", "lucky.conf", "configure file url")
 )
 
 var (
@@ -36,6 +36,7 @@ func init() {
 }
 
 func main() {
+	log.Printf("[main]: %s", flag.CommandLine.Name())
 	flag.Parse()
 	config.InitAppInfo(version, date)
 
